@@ -41,13 +41,21 @@ ___TEMPLATE_PARAMETERS___
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 const setInWindow = require('setInWindow');
+const copyFromWindow = require('copyFromWindow');
 const injectScript = require('injectScript');
-const log = require('logToConsole');
 
-// Set config BEFORE injecting script — the widget reads globals on execution
+// If the widget is already running (e.g. Shopify theme extension), skip
+if (copyFromWindow('set1')) {
+  data.gtmOnSuccess();
+  return;
+}
+
+// Merge with any existing settings (e.g. shopifyPixelActive from theme extension)
+const existing = copyFromWindow('set1Settings') || {};
 setInWindow('set1Settings', {
-  siteKey: data.siteKey,
+  siteKey: existing.siteKey || data.siteKey,
   enableDataLayer: true,
+  shopifyPixelActive: existing.shopifyPixelActive || false,
 }, true);
 
 injectScript(
@@ -97,40 +105,61 @@ ___WEB_PERMISSIONS___
               {
                 "type": 3,
                 "mapKey": [
-                  {
-                    "type": 1,
-                    "string": "key"
-                  },
-                  {
-                    "type": 1,
-                    "string": "read"
-                  },
-                  {
-                    "type": 1,
-                    "string": "write"
-                  },
-                  {
-                    "type": 1,
-                    "string": "execute"
-                  }
+                  { "type": 1, "string": "key" },
+                  { "type": 1, "string": "read" },
+                  { "type": 1, "string": "write" },
+                  { "type": 1, "string": "execute" }
                 ],
                 "mapValue": [
-                  {
-                    "type": 1,
-                    "string": "set1Settings"
-                  },
-                  {
-                    "type": 8,
-                    "boolean": true
-                  },
-                  {
-                    "type": 8,
-                    "boolean": true
-                  },
-                  {
-                    "type": 8,
-                    "boolean": false
-                  }
+                  { "type": 1, "string": "set1Settings" },
+                  { "type": 8, "boolean": true },
+                  { "type": 8, "boolean": true },
+                  { "type": 8, "boolean": false }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  { "type": 1, "string": "key" },
+                  { "type": 1, "string": "read" },
+                  { "type": 1, "string": "write" },
+                  { "type": 1, "string": "execute" }
+                ],
+                "mapValue": [
+                  { "type": 1, "string": "set1Settings.siteKey" },
+                  { "type": 8, "boolean": true },
+                  { "type": 8, "boolean": false },
+                  { "type": 8, "boolean": false }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  { "type": 1, "string": "key" },
+                  { "type": 1, "string": "read" },
+                  { "type": 1, "string": "write" },
+                  { "type": 1, "string": "execute" }
+                ],
+                "mapValue": [
+                  { "type": 1, "string": "set1Settings.shopifyPixelActive" },
+                  { "type": 8, "boolean": true },
+                  { "type": 8, "boolean": false },
+                  { "type": 8, "boolean": false }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  { "type": 1, "string": "key" },
+                  { "type": 1, "string": "read" },
+                  { "type": 1, "string": "write" },
+                  { "type": 1, "string": "execute" }
+                ],
+                "mapValue": [
+                  { "type": 1, "string": "set1" },
+                  { "type": 8, "boolean": true },
+                  { "type": 8, "boolean": false },
+                  { "type": 8, "boolean": false }
                 ]
               }
             ]
@@ -155,14 +184,8 @@ ___WEB_PERMISSIONS___
           "value": {
             "type": 2,
             "listItem": [
-              {
-                "type": 1,
-                "string": "https://widget.set1.io/*"
-              },
-              {
-                "type": 1,
-                "string": "https://widget.stage.set1.io/*"
-              }
+              { "type": 1, "string": "https://widget.set1.io/*" },
+              { "type": 1, "string": "https://widget.stage.set1.io/*" }
             ]
           }
         }
