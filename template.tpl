@@ -13,6 +13,7 @@ ___INFO___
   "id": "cvt_temp_public_id",
   "version": 1,
   "securityGroups": [],
+  "categories": ["CONVERSIONS", "ANALYTICS"],
   "displayName": "Set1 Analytics",
   "brand": {
     "id": "brand_dummy",
