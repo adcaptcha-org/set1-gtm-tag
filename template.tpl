@@ -60,7 +60,7 @@ setInWindow('set1Settings', {
 }, true);
 
 injectScript(
-  'https://widget.set1.io/index.js',
+  'ttps://widget.set1.io/index.js',
   data.gtmOnSuccess,
   data.gtmOnFailure,
   'set1Widget'
@@ -70,27 +70,6 @@ injectScript(
 ___WEB_PERMISSIONS___
 
 [
-  {
-    "instance": {
-      "key": {
-        "publicId": "logging",
-        "versionId": "1"
-      },
-      "param": [
-        {
-          "key": "environments",
-          "value": {
-            "type": 1,
-            "string": "debug"
-          }
-        }
-      ]
-    },
-    "clientAnnotations": {
-      "isEditedByUser": true
-    },
-    "isRequired": true
-  },
   {
     "instance": {
       "key": {
@@ -106,61 +85,157 @@ ___WEB_PERMISSIONS___
               {
                 "type": 3,
                 "mapKey": [
-                  { "type": 1, "string": "key" },
-                  { "type": 1, "string": "read" },
-                  { "type": 1, "string": "write" },
-                  { "type": 1, "string": "execute" }
+                  {
+                    "type": 1,
+                    "string": "key"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  },
+                  {
+                    "type": 1,
+                    "string": "execute"
+                  }
                 ],
                 "mapValue": [
-                  { "type": 1, "string": "set1Settings" },
-                  { "type": 8, "boolean": true },
-                  { "type": 8, "boolean": true },
-                  { "type": 8, "boolean": false }
+                  {
+                    "type": 1,
+                    "string": "set1Settings"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": false
+                  }
                 ]
               },
               {
                 "type": 3,
                 "mapKey": [
-                  { "type": 1, "string": "key" },
-                  { "type": 1, "string": "read" },
-                  { "type": 1, "string": "write" },
-                  { "type": 1, "string": "execute" }
+                  {
+                    "type": 1,
+                    "string": "key"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  },
+                  {
+                    "type": 1,
+                    "string": "execute"
+                  }
                 ],
                 "mapValue": [
-                  { "type": 1, "string": "set1Settings.siteKey" },
-                  { "type": 8, "boolean": true },
-                  { "type": 8, "boolean": false },
-                  { "type": 8, "boolean": false }
+                  {
+                    "type": 1,
+                    "string": "set1Settings.siteKey"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": false
+                  },
+                  {
+                    "type": 8,
+                    "boolean": false
+                  }
                 ]
               },
               {
                 "type": 3,
                 "mapKey": [
-                  { "type": 1, "string": "key" },
-                  { "type": 1, "string": "read" },
-                  { "type": 1, "string": "write" },
-                  { "type": 1, "string": "execute" }
+                  {
+                    "type": 1,
+                    "string": "key"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  },
+                  {
+                    "type": 1,
+                    "string": "execute"
+                  }
                 ],
                 "mapValue": [
-                  { "type": 1, "string": "set1Settings.shopifyPixelActive" },
-                  { "type": 8, "boolean": true },
-                  { "type": 8, "boolean": false },
-                  { "type": 8, "boolean": false }
+                  {
+                    "type": 1,
+                    "string": "set1Settings.shopifyPixelActive"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": false
+                  },
+                  {
+                    "type": 8,
+                    "boolean": false
+                  }
                 ]
               },
               {
                 "type": 3,
                 "mapKey": [
-                  { "type": 1, "string": "key" },
-                  { "type": 1, "string": "read" },
-                  { "type": 1, "string": "write" },
-                  { "type": 1, "string": "execute" }
+                  {
+                    "type": 1,
+                    "string": "key"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  },
+                  {
+                    "type": 1,
+                    "string": "execute"
+                  }
                 ],
                 "mapValue": [
-                  { "type": 1, "string": "set1" },
-                  { "type": 8, "boolean": true },
-                  { "type": 8, "boolean": false },
-                  { "type": 8, "boolean": false }
+                  {
+                    "type": 1,
+                    "string": "set1"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": false
+                  },
+                  {
+                    "type": 8,
+                    "boolean": false
+                  }
                 ]
               }
             ]
@@ -185,8 +260,14 @@ ___WEB_PERMISSIONS___
           "value": {
             "type": 2,
             "listItem": [
-              { "type": 1, "string": "https://widget.set1.io/*" },
-              { "type": 1, "string": "https://widget.stage.set1.io/*" }
+              {
+                "type": 1,
+                "string": "https://widget.set1.io/*"
+              },
+              {
+                "type": 1,
+                "string": "https://widget.stage.set1.io/*"
+              }
             ]
           }
         }
