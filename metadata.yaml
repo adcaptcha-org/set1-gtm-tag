@@ -1,5 +1,5 @@
 homepage: "https://set1.io"
 documentation: "https://github.com/adcaptcha/set1-gtm-tag#readme"
 versions:
-  - sha: "10903f2de3a159c761b5cfc8dcc82675a3d1c74e"
+  - sha: "b9aaa1a57e5b0e17fb8be1f393463a45890917c1"
     changeNotes: "V2"
