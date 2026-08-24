@@ -1,8 +1,0 @@
-fix: Fix typo in script URL and documentation URL in metadata.yaml
-
-- template.tpl: 'ttps://widget.set1.io/index.js'->'https://widget.set1.io/index.js'
-- metadata.yaml: 'https://github.com/adcaptcha/set1-gtm-tag'->'https://github.com/adcaptcha-org/set1-gtm-tag'
-
-Fixes #1
-
-Signed-off-by: Vedant Madane <6527493+VedantMadane@users.noreply.github.com>
