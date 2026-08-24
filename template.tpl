@@ -60,7 +60,7 @@ setInWindow('set1Settings', {
 }, true);
 
 injectScript(
-  'ttps://widget.set1.io/index.js',
+  'https://widget.set1.io/index.js',
   data.gtmOnSuccess,
   data.gtmOnFailure,
   'set1Widget'
